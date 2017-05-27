@@ -84,9 +84,11 @@
     <Compile Include="Assets\Scripts\BallScript.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\DragLaunchController.cs" />
+    <Compile Include="Assets\Scripts\LaneBoxController.cs" />
     <Compile Include="Assets\Scripts\PinController.cs" />
     <Compile Include="Assets\Scripts\PinSetterController.cs" />
     <Compile Include="Assets\Scripts\SchrederController.cs" />
+    <Compile Include="Assets\Scripts\ScoreMaster.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

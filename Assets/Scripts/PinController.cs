@@ -34,6 +34,7 @@ public class PinController : MonoBehaviour
             {
                 rigidbody.useGravity = false;
                 transform.Translate(new Vector3(0,distaneToRaise,0),Space.World);
+                transform.rotation = Quaternion.Euler(new Vector3(270f,0,0));
             }
         }
     }
@@ -42,6 +43,7 @@ public class PinController : MonoBehaviour
     {
         rigidbody.useGravity = true;
         transform.Translate(new Vector3(0,-distaneToRaise,0),Space.World);
+        transform.rotation = Quaternion.Euler(new Vector3(270f, 0, 0));
     }
 
 }

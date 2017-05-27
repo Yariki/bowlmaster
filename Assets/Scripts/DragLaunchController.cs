@@ -9,7 +9,7 @@ public class DragLaunchController : MonoBehaviour
     private Vector3 dragStart, dragEnd;
     private float startTime, endTime;
     private BallScript ball;
-    
+
     void Start()
     {
         ball = GetComponent<BallScript>();
@@ -19,7 +19,7 @@ public class DragLaunchController : MonoBehaviour
     {
         if (ball && !ball.IsInPlay)
         {
-            ball.Move(new Vector3(amount,0,0));
+            ball.Move(new Vector3(amount, 0, 0));
         }
     }
 
@@ -27,26 +27,30 @@ public class DragLaunchController : MonoBehaviour
 
     public void DragStart()
     {
-        dragStart = Input.mousePosition;
-        startTime = Time.time;
-    }
-    
-    public void DragEnd()
-    {
-        dragEnd = Input.mousePosition;
-        endTime = Time.time;
-
-        float launchTime = endTime - startTime;
-
-        float launchSpeedX = (dragEnd.x - dragStart.x) / launchTime;
-        float launchSpeedZ = (dragEnd.y - dragStart.y) / launchTime;
-
-        if (ball)
+        if (ball && !ball.IsInPlay)
         {
-            ball.Launch(new Vector3(launchSpeedX,0,launchSpeedZ));
+            dragStart = Input.mousePosition;
+            startTime = Time.time;
         }
 
     }
-        
+
+    public void DragEnd()
+    {
+        if (ball && !ball.IsInPlay)
+        {
+            dragEnd = Input.mousePosition;
+            endTime = Time.time;
+
+            float launchTime = endTime - startTime;
+
+            float launchSpeedX = (dragEnd.x - dragStart.x) / launchTime;
+            float launchSpeedZ = (dragEnd.y - dragStart.y) / launchTime;
+
+            ball.Launch(new Vector3(launchSpeedX, 0, launchSpeedZ));
+        }
+
+    }
+
 
 }

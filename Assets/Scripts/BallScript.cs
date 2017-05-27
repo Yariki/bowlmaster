@@ -50,6 +50,8 @@ public class BallScript : MonoBehaviour
         rigidbody.velocity = Vector3.zero;
         rigidbody.angularVelocity = Vector3.zero;
         transform.position = ballIntPos;
+        transform.rotation = Quaternion.identity;
+        
     }
 
 }
