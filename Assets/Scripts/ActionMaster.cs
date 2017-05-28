@@ -32,7 +32,7 @@ public class ActionMaster
     }
 
 
-    public Action Bowl(int pins)
+    private Action Bowl(int pins)
     {
         if (pins < 0 || pins > 10)
         {
