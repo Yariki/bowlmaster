@@ -19,11 +19,12 @@ public class DragLaunchController : MonoBehaviour
     {
         if (ball && !ball.IsInPlay)
         {
-            ball.Move(new Vector3(amount, 0, 0));
+			float xPos = Mathf.Clamp(ball.transform.position.x + amount, -50, 50);
+			float yPos = ball.transform.position.y;
+			float zPos = ball.transform.position.z;
+			ball.Move(new Vector3(xPos, yPos, zPos));
         }
     }
-
-
 
     public void DragStart()
     {

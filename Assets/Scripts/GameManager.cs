@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private List<int> bowls = new List<int>();
+    private List<int> rolls = new List<int>();
 
     private PinSetterController pinSetter;
     private BallScript ball;
+    private ScoreDisplayController scoreDisplayController;
 
 
     // Use this for initialization
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     {
         pinSetter = GameObject.FindObjectOfType<PinSetterController>();
         ball = GameObject.FindObjectOfType<BallScript>();
+        scoreDisplayController = GameObject.FindObjectOfType<ScoreDisplayController>();
     }
 
     // Update is called once per frame
@@ -26,11 +28,12 @@ public class GameManager : MonoBehaviour
 
     public void Bowl(int pinFall)
     {
-        bowls.Add(pinFall);
-
-        ActionMaster.Action currentAction = ActionMaster.NextAction(bowls);
-
-        pinSetter.PerformAction(currentAction);
+        rolls.Add(pinFall);
         ball.Reset();
+
+        scoreDisplayController.FillRools(rolls);
+        scoreDisplayController.FillScores(rolls);
+
+        pinSetter.PerformAction(ActionMaster.NextAction(rolls));
     }
 }

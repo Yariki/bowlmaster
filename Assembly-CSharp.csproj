@@ -57,8 +57,8 @@
      <Compile Include="Assets\Scripts\PinCounterController.cs" />
      <Compile Include="Assets\Scripts\PinSetterController.cs" />
      <Compile Include="Assets\Scripts\SchrederController.cs" />
+     <Compile Include="Assets\Scripts\ScoreDisplayController.cs" />
      <Compile Include="Assets\Scripts\ScoreMaster.cs" />
-     <Compile Include="Assets\Scripts\ScroDisplayController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
